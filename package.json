@@ -1,0 +1,25 @@
+{
+  "name": "email-servive",
+  "version": "1.0.0",
+  "description": "This is the service that handles email component of the blueto tech pvt ltd. Dependencies are nodemailer lib and nodejs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:dev": "NODE_ENV=development node index.js",
+    "start:prod": "NODE_ENV=production node index.js"
+  },
+  "keywords": [
+    "email",
+    "nodemailer",
+    "nodejs"
+  ],
+  "author": "arullamudhane",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14"
+  }
+}
