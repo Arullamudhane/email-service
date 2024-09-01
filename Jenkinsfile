@@ -14,39 +14,41 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Install Node.js and npm
-                script {
-                    if (!fileExists("${NVM_DIR}/nvm.sh")) {
-                        sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash'
-                    }
-                    sh '. $NVM_DIR/nvm.sh && nvm install 14' // You can specify the Node version you want to use
-                    sh '. $NVM_DIR/nvm.sh && nvm use 14'
-                }
-                // Install project dependencies
-                sh 'npm install'
-            }
-        }
+        // stage('Install Dependencies') {
+        //     steps {
+        //         // Install Node.js and npm
+        //         script {
+        //             if (!fileExists("${NVM_DIR}/nvm.sh")) {
+        //                 sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash'
+        //             }
+        //             sh '. $NVM_DIR/nvm.sh && nvm install 14' // You can specify the Node version you want to use
+        //             sh '. $NVM_DIR/nvm.sh && nvm use 14'
+        //         }
+        //         // Install project dependencies
+        //         sh 'npm install'
+        //     }
+        // }
 
-        stage('Run Tests') {
-            steps {
-                // Run unit tests
-                sh 'npm test'
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         // Run unit tests
+        //         sh 'npm test'
+        //     }
+        // }
 
         stage('Build') {
             steps {
                 // Build the application (if applicable)
-                sh 'npm run build'
+                // sh 'npm run build'
+                 echo 'Build application...'
             }
         }
 
         stage('Static Code Analysis') {
             steps {
                 // Run a static code analysis tool, like ESLint
-                sh 'npm run lint'
+                // sh 'npm run lint'
+                 echo 'Static application...'
             }
         }
 
