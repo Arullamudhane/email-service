@@ -1,4 +1,4 @@
-import EmailBuilder from "../builder/emailBuilder.js";
+import EmailBuilder from "../builder/EmailBuilder.js";
 import nodemailer from "nodemailer";
 
 import transporter from "../config/nodemailerconfig.js";
