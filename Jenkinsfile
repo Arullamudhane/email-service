@@ -8,16 +8,7 @@ pipeline {
                 git url:"https://github.com/Arullamudhane/email-service.git", branch: "master"
             }
         }
-
-        stage('Build check') {
-            steps {
-                script {
-                    docker.image('alpine').inside {
-                        sh 'echo "Hello from Docker container!"'
-                    }
-                }
-            }
-        }
+        
           stage("dock check"){
             steps {
                 echo "Building the image"
@@ -48,7 +39,7 @@ pipeline {
                 echo 'deploying on another server'
 sh 'docker stop email-service-app || true'
 sh 'docker rm email-service-app || true'
-sh 'docker run -d --name email-service-app -p 8000:8000 my-email'
+sh 'docker run -d --name email-service-app -p 8000:3005 my-email'
 // sh '''
 
 
