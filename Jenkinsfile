@@ -48,7 +48,7 @@ pipeline {
                 echo 'deploying on another server'
 sh 'docker stop email-service-app || true'
 sh 'docker rm email-service-app || true'
-sh 'docker run -d - name email-service-app -p 8000:8000 my-email'
+sh 'docker run -d --name email-service-app -p 8000:8000 my-email'
 // sh '''
 
 
