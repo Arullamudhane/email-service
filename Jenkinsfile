@@ -46,9 +46,9 @@ pipeline {
                 // echo "Deploying the container"
                 // sh "docker-compose down && docker-compose up -d"
                 echo 'deploying on another server'
-sh 'sudo docker stop email-service-app || true'
-sh 'sudo docker rm email-service-app || true'
-sh 'sudo docker run -d - name email-service-app -p 8000:8000 my-email'
+sh 'docker stop email-service-app || true'
+sh 'docker rm email-service-app || true'
+sh 'docker run -d - name email-service-app -p 8000:8000 my-email'
 // sh '''
 
 
