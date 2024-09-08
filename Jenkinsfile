@@ -8,6 +8,16 @@ pipeline {
                 git url:"https://github.com/Arullamudhane/email-service.git", branch: "master"
             }
         }
+
+        stage('Build check') {
+            steps {
+                script {
+                    docker.image('alpine').inside {
+                        sh 'echo "Hello from Docker container!"'
+                    }
+                }
+            }
+        }
           stage("dock check"){
             steps {
                 echo "Building the image"
