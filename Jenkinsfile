@@ -8,6 +8,12 @@ pipeline {
                 git url:"https://github.com/Arullamudhane/email-service.git", branch: "master"
             }
         }
+          stage("dock check"){
+            steps {
+                echo "Building the image"
+                sh "docker --version"
+            }
+        }
         stage("Build"){
             steps {
                 echo "Building the image"
